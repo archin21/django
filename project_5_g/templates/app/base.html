@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>base</title>
+  </head>
+  <body>
+    <a href='{% url 'index' %}'>home</a>
+    <a href='{% url 'admin:index'%}'>admin</a>
+    <a href='{% url 'app:registeration'%}'>registeration</a>
+    {% if user.is_authenticated %}
+    <a href='{% url 'logout' %}'>logout</a>
+    {% else %}
+    <a href='{% url 'app:login'%}'>login</a>
+    {% endif %}
+    {% block body_1%}
+    {% endblock %}
+  </body>
+</html>
